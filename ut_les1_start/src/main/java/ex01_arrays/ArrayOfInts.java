@@ -1,6 +1,9 @@
 package ex01_arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class ArrayOfInts {
     public int sumOfInts(int[] arrayOfInts) {
@@ -37,16 +40,28 @@ public class ArrayOfInts {
         int sum = 0;
         for (int i=sumOfXLargest.length;i > sumOfXLargest.length-x;i--) {
             sum += sumOfXLargest[i-1];
-            System.out.println(sum);
         }
         return sum;
+    }
+    public int countMostPopularNumber(int[] arrayOfInts) {
+        if (arrayOfInts == null) return 0;
+        HashMap<Integer,Integer> counter = new HashMap<>();
+        for (Integer i : arrayOfInts)
+            counter.put(i, counter.getOrDefault(i,0)+1);
+        Collection<Integer> values = counter.values();
+        int max = 0;
+        for (Integer v : values)
+            if (v > max) max = v;
+        return max;
     }
 
     public static void main(String[] args) {
         ArrayOfInts ex1 = new ArrayOfInts();
         int result = ex1.sumOfInts(new int[]{1, 2, 3, 4});
         int sumXlargest = ex1.sumOfXLargest(new int[]{1, 2, 3, 4},2);
-        System.out.println(result);
-        System.out.println(sumXlargest);
+        int popular = ex1.countMostPopularNumber(new int[]{1,2,3,3,3,4,5});
+//        System.out.println(result);
+//        System.out.println(sumXlargest);
+        System.out.println(popular);
     }
 }

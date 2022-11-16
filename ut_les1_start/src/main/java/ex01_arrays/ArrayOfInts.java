@@ -28,12 +28,25 @@ public class ArrayOfInts {
     }
 
     public int sumOfXLargest(int[] arrayOfInts, int x) {
-        return 0;
+        if (arrayOfInts == null) return 0;
+        if (x > arrayOfInts.length) {
+            x = arrayOfInts.length;
+        }
+        int[] sumOfXLargest = Arrays.copyOf(arrayOfInts, arrayOfInts.length);
+        Arrays.sort(sumOfXLargest);
+        int sum = 0;
+        for (int i=sumOfXLargest.length;i > sumOfXLargest.length-x;i--) {
+            sum += sumOfXLargest[i-1];
+            System.out.println(sum);
+        }
+        return sum;
     }
 
     public static void main(String[] args) {
         ArrayOfInts ex1 = new ArrayOfInts();
         int result = ex1.sumOfInts(new int[]{1, 2, 3, 4});
+        int sumXlargest = ex1.sumOfXLargest(new int[]{1, 2, 3, 4},2);
         System.out.println(result);
+        System.out.println(sumXlargest);
     }
 }

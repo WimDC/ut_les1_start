@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ut_les1_start/unittesting_exercises.iml" filepath="$PROJECT_DIR$/ut_les1_start/unittesting_exercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ut_les1_start.iml" filepath="$PROJECT_DIR$/.idea/ut_les1_start.iml" />
+    </modules>
+  </component>
+</project>

@@ -54,28 +54,50 @@ public class ArrayOfInts {
             if (v > max) max = v;
         return max;
     }
-    public ArrayList findCommonElements(int[] arrayOfInts, int[] arrayOfInts2) {
-        if (arrayOfInts == null || arrayOfInts2 == null) return new ArrayList<>();
-        ArrayList<Integer> commonArray = new ArrayList<>();
+    public int[] findCommonElements(int[] arrayOfInts, int[] arrayOfInts2) {
+        if (arrayOfInts == null || arrayOfInts2 == null) {
+            int[] nullList = new int[0];
+            return nullList;
+        }
+        ArrayList<Integer> commonArrayList = new ArrayList<>();
+        int s = 0;
         for (int i = 0; i < arrayOfInts.length ; i++) {
             for (int x = 0 ; x < arrayOfInts2.length ; x++) {
                 if (arrayOfInts[i] == arrayOfInts2[x]) {
-                    commonArray.add(arrayOfInts[i]);
+                    commonArrayList.add(arrayOfInts[i]);
                 }
            }
        }
+        int[] commonArray = new int[commonArrayList.size()];
+        for (int i : commonArrayList) {
+            commonArray[s] = commonArrayList.get(s);
+            s++;
+        }
         return commonArray;
     }
-
-    public static void main(String[] args) {
-        ArrayOfInts ex1 = new ArrayOfInts();
-        int result = ex1.sumOfInts(new int[]{1, 2, 3, 4});
-        int sumXlargest = ex1.sumOfXLargest(new int[]{1, 2, 3, 4},2);
-        int popular = ex1.countMostPopularNumber(new int[]{1,2,3,3,3,4,5});
-        ArrayList common = ex1.findCommonElements(new int[]{1,2,3,4}, new int[]{1,1,5,7});
+/*    public int[] findDuplicateValues(int[] arrayOfInts) {
+        var x = 0;
+        if (arrayOfInts == null) {
+            int[] nullList = new int[0];
+            return nullList;
+        }
+        for (int v : arrayOfInts) {
+            for (int i = 0; i<arrayOfInts.length; i++){
+                if (v == arrayOfInts[i]) {
+                    if
+                }
+            }
+        }
+    } */
+//    public static void main(String[] args) {
+//        ArrayOfInts ex1 = new ArrayOfInts();
+//        int result = ex1.sumOfInts(new int[]{1, 2, 3, 4});
+//        int sumXlargest = ex1.sumOfXLargest(new int[]{1, 2, 3, 4},2);
+//        int popular = ex1.countMostPopularNumber(new int[]{1,2,3,3,3,4,5});
+//        int[] common = ex1.findCommonElements(new int[]{1,2,3,4}, new int[]{1,1,3,5,7});
 //        System.out.println(result);
 //        System.out.println(sumXlargest);
 //        System.out.println(popular);
-        System.out.println(common);
-    }
+//        System.out.println(common);
+//    }
 }

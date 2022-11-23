@@ -14,6 +14,9 @@ public class Product {
         this.percentage = percentage;
     }
 
+    public Product() {
+    }
+
     public String productDescription () {
         String ret = "";
         if (percentage == Math.floor(percentage)) {

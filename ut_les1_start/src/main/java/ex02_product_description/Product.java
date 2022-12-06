@@ -10,11 +10,25 @@ public class Product {
 
     public Product(String name, int size, double percentage) {
         this.name = name;
-        this.size = size;
-        this.percentage = percentage;
+        setSize(size);
+        setPercentage(percentage);
     }
 
     public Product() {
+    }
+
+    public void setSize(int size) {
+        if (size < 0) {
+            size = size * -1;
+        }
+        this.size = size;
+    }
+
+    public void setPercentage(double percentage) {
+        if (percentage < 0)  {
+            percentage = percentage * -1;
+        }
+            this.percentage = percentage;
     }
 
     public String productDescription () {
@@ -29,7 +43,11 @@ public class Product {
     public static void main(String[] args) {
         Product p = new Product("Jupiler",33,5.3654);
         Product x = new Product("Bier",50,6);
+        Product y = new Product("soberer", 25, -4.33);
+        Product z = new Product("thirst intensifier", -75, 9);
         System.out.println(p.productDescription());
         System.out.println(x.productDescription());
+        System.out.println(y.productDescription());
+        System.out.println(z.productDescription());
     }
 }

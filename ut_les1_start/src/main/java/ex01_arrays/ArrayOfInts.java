@@ -60,7 +60,6 @@ public class ArrayOfInts {
             return nullList;
         }
         ArrayList<Integer> commonArrayList = new ArrayList<>();
-        int s = 0;
         for (int i = 0; i < arrayOfInts.length ; i++) {
             for (int x = 0 ; x < arrayOfInts2.length ; x++) {
                 if (arrayOfInts[i] == arrayOfInts2[x]) {
@@ -68,9 +67,10 @@ public class ArrayOfInts {
                 }
            }
        }
+        int s = 0;
         int[] commonArray = new int[commonArrayList.size()];
         for (int i : commonArrayList) {
-            commonArray[s] = commonArrayList.get(s);
+            commonArray[s] = i;
             s++;
         }
         return commonArray;

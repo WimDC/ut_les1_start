@@ -8,6 +8,7 @@ public class productDescriptionTest {
     private final Product stella = new Product("Stella",33,5.369);
     private final Product jupiler = new Product("jupiler",50,5);
     private final Product invertedBier = new Product("soberer",25,-4.287);
+    private final Product unEmptyBeverage = new Product("thirst intensifier", -75, 9);
     @Test
     public void decimalePercentage() {
         String result = stella.productDescription();
@@ -21,6 +22,11 @@ public class productDescriptionTest {
     @Test
     public void negativePercentage() {
         String result = invertedBier.productDescription();
-        assertEquals(" * 25CL -4,3%", result);
+        assertEquals(" * 25CL 4,3%", result);
+    }
+    @Test
+    public void negativeSize() {
+        String result = unEmptyBeverage.productDescription();
+        assertEquals(" * 75CL 9%", result);
     }
 }
